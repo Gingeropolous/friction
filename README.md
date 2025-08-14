@@ -1,10 +1,8 @@
-# friction
-
-# A Commitment-Based Privacy-Preserving Reputation System for Proof-of-Work Blockchains
+# Friction: A Commitment-Based Privacy-Preserving Reputation System for Proof-of-Work Blockchains
 
 **Abstract**
 
-We propose a novel approach to mitigating selfish mining and deep reorganization attacks in Proof-of-Work blockchains through a commitment-based reputation system. Unlike existing complex approaches that rely on cryptographic accumulators and intricate zero-knowledge circuits, our system builds on simple hash commitments embedded in block headers. Miners prove their reputation by demonstrating control over multiple commitments from recent blocks, with privacy preserved through ring signatures or zero-knowledge proofs applied to the commitment opening process. This approach offers significant implementation simplicity while maintaining the security guarantees needed to defend against sophisticated attacks on networks like Monero.
+We propose a novel approach to mitigating selfish mining and deep reorganization attacks in Proof-of-Work blockchains through a commitment-based reputation system. Our system builds on simple hash commitments embedded in block headers. Miners prove their reputation by demonstrating control over multiple commitments from recent blocks, with privacy preserved through ring signatures or zero-knowledge proofs applied to the commitment opening process. This approach offers implementation simplicity while maintaining the security guarantees needed to defend against sophisticated attacks on networks like Monero.
 
 ## 1. Introduction
 
@@ -18,8 +16,6 @@ Recent attacks on privacy-focused cryptocurrencies, particularly the sustained c
 
 Current approaches to this problem suffer from significant drawbacks:
 
-**Complex Cryptographic Systems**: Proposals involving cryptographic accumulators and sophisticated zero-knowledge circuits require novel cryptographic constructions that are difficult to implement securely and impose substantial computational overhead.
-
 **Privacy Trade-offs**: Many reputation systems require persistent, linkable identities that fundamentally conflict with the privacy guarantees of systems like Monero.
 
 **Synchronization Challenges**: Systems requiring nodes to maintain complex state about historical contributions create consensus fragility when nodes have different views of this state.
@@ -28,7 +24,7 @@ Current approaches to this problem suffer from significant drawbacks:
 
 We present a commitment-based approach that addresses these limitations through:
 
-1. **Simplicity**: Built on well-understood hash commitment primitives rather than novel cryptographic constructions
+1. **Simplicity**: Built on well-understood hash commitment primitives
 2. **Incremental Privacy**: A clear upgrade path from simple (transparent) to privacy-preserving implementations
 3. **Self-Contained Verification**: All verification data contained within a rolling window of recent blocks
 4. **Implementation Feasibility**: Compatible with existing blockchain infrastructures with minimal consensus changes
